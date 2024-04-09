@@ -3,10 +3,11 @@ import {createBrowserRouter} from "react-router-dom";
 import Root from "../components/Root";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../pages/Home";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
+
 import UserProfile from './../pages/UserProfile';
 import UpdateProfile from "../pages/UpdateProfile";
+import Login from './../pages/Login';
+import Register from "../pages/Register";
 
 
 const router = createBrowserRouter([
@@ -20,12 +21,12 @@ const router = createBrowserRouter([
             element:<Home></Home>,
           },
           {
-            path: "/about",
-            element:<About></About>,
+            path: "/login",
+            element:<Login></Login>,
           },
           {
-            path: "/contact",
-            element:<Contact></Contact>,
+            path: "/register",
+            element:<Register></Register>,
           },
           {
             path: "/updateprofile",
