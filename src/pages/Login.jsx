@@ -1,15 +1,56 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../providers/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { GoogleAuthProvider, getAuth, signInWithPopup,  } from "firebase/auth";
+import app from "../firebase/Firebase.config";
 
 
 const Login = () => {
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider()
+  
+
+    const {signIn} = useContext(AuthContext)
+    const [showPassword, setShowPassword] = useState(false)
+
+    const handleGoogleSignIn = () => {
+      signInWithPopup(auth, provider)
+      .then(result => {
+        console.log(result.user)
+      })
+      .catch(error => {
+        console.log('error', error.message)
+      })
+      console.log('google mama is coming')
+    }
      
     const handleLogIn = e => {
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget)
-        console.log(form.get('email'))
+        const email = form.get('email')
+        const password = form.get('password')
+        console.log(email, password)
+
+        signIn(email, password)
+        .then(result =>{
+          
+            console.log(result.user)
+            
+        })
+        .catch(error => {
+            console.error(error)
+        })
     }
+    // const handleSignOut= () => {
+    //   signOut(auth)
+    //   .then(result => {
+    //     console.log(result)
+    //     setUser(null)
+    //   })
+    //   .catch()
+    // }
     
       
     
@@ -32,10 +73,21 @@ const Login = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                </label>
+                <div className="relative">
+                <input 
+               type={showPassword ? "text" : "password"}  
+                name="password"
+                 placeholder="Password" 
+                 className="input input-bordered w-full" required />
+                 <span className="absolute top-3 right-2" onClick={() => {setShowPassword(!showPassword)}}>
+                  {
+                    showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                  }
+                 </span>
+                 </div>
+                 <label className="label">
+                 <button onClick={handleGoogleSignIn} className="btn btn-ghost">Google Login</button>
+          </label>
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
