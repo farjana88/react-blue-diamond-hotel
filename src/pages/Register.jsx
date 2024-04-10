@@ -106,12 +106,13 @@ const Register = () => {
             {
                 registerError && 
                 <p className="text-red-600"> {registerError}</p>
-               
+                
                 // <div className="toast toast-top toast-center">
                 // <div className="alert alert-info">
                 //   <span> Already have an account </span>
                 // </div>
                 // </div>
+                
             }
             {
               success &&

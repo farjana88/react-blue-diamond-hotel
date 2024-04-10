@@ -2,27 +2,36 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { GoogleAuthProvider, getAuth, signInWithPopup,  } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup,  } from "firebase/auth";
 import app from "../firebase/Firebase.config";
 
 
 const Login = () => {
   const auth = getAuth(app);
-  const provider = new GoogleAuthProvider()
-  
+  const googleProvider = new GoogleAuthProvider()
+   const githubProvider = new GithubAuthProvider()
 
     const {signIn} = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
 
     const handleGoogleSignIn = () => {
-      signInWithPopup(auth, provider)
+      signInWithPopup(auth, googleProvider)
       .then(result => {
         console.log(result.user)
       })
       .catch(error => {
         console.log('error', error.message)
       })
-      console.log('google mama is coming')
+      // console.log('google mama is coming')
+    }
+    const handleGithubSignIn = () => {
+      signInWithPopup(auth, githubProvider)
+      .then(result => {
+        console.log(result.user)
+      })
+      .catch(error => {
+        console.log('error', error.message)
+      })
     }
      
     const handleLogIn = e => {
@@ -87,6 +96,7 @@ const Login = () => {
                  </div>
                  <label className="label">
                  <button onClick={handleGoogleSignIn} className="btn btn-ghost">Google Login</button>
+                 <button onClick={handleGithubSignIn} className="btn btn-ghost">Github Login</button>
           </label>
               </div>
               <div className="form-control mt-6">
