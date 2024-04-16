@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup,  } from "firebase/auth";
@@ -12,7 +12,13 @@ const Login = () => {
    const githubProvider = new GithubAuthProvider()
 
     const {signIn} = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    console.log('location in the login page', location)
     const [showPassword, setShowPassword] = useState(false)
+
+    
+    
 
     const handleGoogleSignIn = () => {
       signInWithPopup(auth, googleProvider)
@@ -46,6 +52,9 @@ const Login = () => {
         .then(result =>{
           
             console.log(result.user)
+            // navigate after login
+
+            navigate(location?.state ? location.state : '/')
             
         })
         .catch(error => {

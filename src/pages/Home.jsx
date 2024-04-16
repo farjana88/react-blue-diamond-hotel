@@ -1,7 +1,11 @@
-
+import { useLoaderData } from "react-router-dom"
+import CardDetails from "./CardDetails";
 
 const Home = () => {
+  const cards = useLoaderData()
+  console.log(cards)
     return (
+      <div>
         <div className="carousel w-full">
   <div id="slide1" className="carousel-item relative w-full">
     <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
@@ -32,7 +36,20 @@ const Home = () => {
     </div>
   </div>
 </div>
+<div>
+  {/* card container */}
+
+{
+  cards.map(card => <CardDetails
+  key={card.id}
+  cards ={card}
+  ></CardDetails>)
+}
+</div>
+</div>
+  
     );
+   
 };
 
 export default Home;

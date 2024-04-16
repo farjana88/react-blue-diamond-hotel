@@ -1,0 +1,58 @@
+[
+   
+
+    {
+      "image": "https://i.ibb.co/CpL630H/162.jpg",
+      "estate_title": "Urban Chic Boutique Hotel",
+      "id": "HOT004",
+      "segment_name": "Boutique",
+      "description": "Experience the epitome of urban chic in our boutique hotel located in the heart of the bustling city. Enjoy stylish accommodations and personalized service.",
+      "price": "$250 per night",
+      "status": "rent",
+      "area": "1800 sq ft",
+      "location": "Los Angeles, California",
+      "facilities": ["Art gallery", "Cocktail lounge", "Fitness studio", "Pet-friendly rooms"],
+      "view_property_button": "View Property"
+    },
+    {
+      "image": "https://i.ibb.co/xGQwRsm/1073.jpg",
+      "estate_title": "Seaside Resort Villa",
+      "id": "HOT005",
+      "segment_name": "Luxury",
+      "description": "Relax and unwind in our luxurious seaside villa, boasting panoramic views of the ocean. Enjoy private beach access and five-star amenities.",
+      "price": "$800 per night",
+      "status": "rent",
+      "area": "4000 sq ft",
+      "location": "Malibu, California",
+      "facilities": ["Private infinity pool", "Tennis court", "Private chef", "Oceanfront terrace"],
+      "view_property_button": "View Property"
+    },
+    {
+      "image": "https://i.ibb.co/JpdS1TT/sunset-pool.jpg",
+      "estate_title": "Historic Boutique Inn",
+      "id": "HOT006",
+      "segment_name": "Historic",
+      "description": "Step back in time and experience the charm of our historic boutique inn. Located in a quaint town, our inn offers cozy accommodations and warm hospitality.",
+      "price": "$150 per night",
+      "status": "rent",
+      "area": "1200 sq ft",
+      "location": "Charleston, South Carolina",
+      "facilities": ["Antique furnishings", "Garden courtyard", "Complimentary breakfast", "Bicycle rentals"],
+      "view_property_button": "View Property"
+    },
+    {
+      "image": "https://i.ibb.co/Yfs1CDY/184.jpg",
+      "estate_title": "Mountain Chalet Retreat",
+      "id": "HOT007",
+      "segment_name": "Rustic",
+      "description": "Escape to our charming mountain chalet for a cozy retreat surrounded by nature. Enjoy breathtaking views and outdoor adventures.",
+      "price": "$200 per night",
+      "status": "rent",
+      "area": "1800 sq ft",
+      "location": "Lake Tahoe, California",
+      "facilities": ["Hot tub", "Fireplace", "Ski storage", "Deck with mountain views"],
+      "view_property_button": "View Property"
+    }
+ 
+  ]
+  
