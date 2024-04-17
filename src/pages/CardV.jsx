@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-// import { PropTypes } from 'prop-types';
+
 
 
 
@@ -17,8 +17,8 @@ const CardV = () => {
     
     return (
         <div>
-        <h2>card view</h2>
-        <p>{id}</p>
+        {/* <h2>card view</h2>
+        <p>{id}</p> */}
       
         <div className="max-w-xs p-6 rounded-md shadow-md bg-gray-900 text-gray-50">
 	<img src={image} alt="" className="object-cover object-center w-full rounded-md h-72 bg-gray-500" />

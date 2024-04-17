@@ -4,13 +4,15 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+
 const firebaseConfig = {
-  apiKey: "AIzaSyACeJQouQNCnKRZ3Z0uRaYMK4tPMaWpurg",
-  authDomain: "react-blue-diamond-hotel.firebaseapp.com",
-  projectId: "react-blue-diamond-hotel",
-  storageBucket: "react-blue-diamond-hotel.appspot.com",
-  messagingSenderId: "273070072294",
-  appId: "1:273070072294:web:25223375f0956598837627"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain:import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTEDID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId:  import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
